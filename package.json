@@ -1,0 +1,31 @@
+{
+  "name": "keymapviewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "styles": "tailwind -i main.css -o build/main.css",
+    "js": "esbuild renderer.js --bundle --loader:.js=jsx --outfile=build/index.js",
+    "watch": "concurrently \"yarn styles --watch\" \"yarn js --watch\"",
+    "build": "yarn js && yarn styles",
+    "start": "yarn build && yarn electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "active-win": "^7.7.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rxjs": "^7.5.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "electron": "^16.0.7",
+    "electron-reload": "^2.0.0-alpha.1",
+    "esbuild": "^0.14.11",
+    "nodemon": "^2.0.15",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.13"
+  }
+}
